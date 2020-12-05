@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Dashboard</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- Material Kit CSS -->
+  <link href="assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+</head>
+
+<body>
+  <div class="wrapper ">
+    <div class="sidebar" data-color="azure" data-background-color="black">
+      
+      <div class="logo">
+        <a href="https://opendatakosovo.org/" target="_blank" class="simple-text logo-mini">
+        </a>
+        <a href="https://opendatakosovo.org/" target="_blank" class="simple-text logo-normal">
+          Open Data Kosovo
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item active  ">
+            <a class="nav-link" href="#0">
+              <i class="fas fa-clipboard-list"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a href="profil.html">
+              <i class="fas fa-user"></i>
+              <p>Profile  </p>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a href="table.html">
+              <i class="fas fa-table"></i>
+              <p> Table List </p>
+            </a>
+          </li>
+          <li class="nav-item active  ">
+            <a href="map1.html">
+             <i class="fas fa-map-marked-alt"></i>
+              <p>Map</p>
+            </a>
+          </li>
+          <!-- your sidebar here -->
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">  
+          <nav class="navbar navbar-dark bg-dark justify-content-between">
+  <a class="navbar-brand" style="margin-left: 300px;"></a>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color: rgba(0,0,0,.1); color: white;">Search</button>
+  </form>
+  <div class="dropdown" style="margin-left: 200px;">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: rgba(0,0,0,.1); color: white;">
+    User
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Profil</a>
+    <a class="dropdown-item" href="#">Settings</a>
+    <a class="dropdown-item" href="#">Log out</a>
+  </div>
+</div>
+</nav>
+      <div id="chartdiv"></div>
+
+      <div id="second-panel" style="height: auto; width: 100%; margin: 0 auto; display: flex;">
+        
+        <td><div id="chartdiv1" style="width: 40%"></div></td>
+        <td><div id="chartdiv2" style="width: 60%; padding-right: 20px; padding-left: 100px; padding-bottom: 150px; "></div></td>
+      
+
+      
+      </div>
+
+
+
+      
+
+      <!-- Navbar -->
+  
+
+      
+      
+              <!-- your navbar here -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- End Navbar -->
+      <div class="content">
+
+        <div class="container-fluid">
+
+          
+          <!-- your content here -->
+        </div>
+      </div>
+
+       <footer class="footer" style="color: white;">
+        <div class="container-fluid">
+          <nav class="float-left">
+            <ul>
+              <li>
+                <a href="https://opendatakosovo.org/">
+                  ODK
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright float-right">
+            &copy;
+            <script>
+              document.write(new Date().getFullYear())
+            </script>,  <i class="material-icons"></i> by
+            <a href="https://www.creative-tim.com" target="_blank">Visar Morina</a> for a better web.
+          </div>
+          <!-- your footer here -->
+        </div>
+      </footer>
+    </div>
+  </div>
+
+    </div>
+  </div>
+
+
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/dark.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>  
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/geodata/continentsLow.js"></script>
+
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_dark);
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+var chart = am4core.create("chartdiv", am4charts.XYChart3D);
+
+// Add data
+chart.data = [{
+    "country": "USA",
+    "year2017": 12,
+    "year2018": 13.5
+}, {
+    "country": "UK",
+    "year2017": 8.7,
+    "year2018": 10.2
+}, {
+    "country": "Canada",
+    "year2017": 5.4,
+    "year2018": 6.8
+}, {
+    "country": "Japan",
+    "year2017": 9.5,
+    "year2018": 10.9
+}, {
+    "country": "France",
+    "year2017": 7.3,
+    "year2018": 8.4
+}, {
+    "country": "Brazil",
+    "year2017": 10.2,
+    "year2018": 11.6
+}, {
+    "country": "Russia",
+    "year2017": 11.6,
+    "year2018": 13.2
+}, {
+    "country": "India",
+    "year2017": 8,
+    "year2018": 7.1
+}, {
+    "country": "China",
+    "year2017": 9.9,
+    "year2018": 10.1
+}];
+
+// Create axes
+var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+categoryAxis.dataFields.category = "country";
+categoryAxis.renderer.grid.template.location = 0;
+categoryAxis.renderer.minGridDistance = 30;
+
+var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+valueAxis.title.text = "Dos & DDos attacks (2017&2018)";
+valueAxis.renderer.labels.template.adapter.add("text", function(text) {
+  return text + "%";
+});
+
+// Create series
+var series = chart.series.push(new am4charts.ColumnSeries3D());
+series.dataFields.valueY = "year2017";
+series.dataFields.categoryX = "country";
+series.name = "Year 2017";
+series.clustered = false;
+series.columns.template.tooltipText = "Dos & DDos attacks {category} (2017): [bold]{valueY}[/]";
+series.columns.template.fillOpacity = 0.9;
+
+var series2 = chart.series.push(new am4charts.ColumnSeries3D());
+series2.dataFields.valueY = "year2018";
+series2.dataFields.categoryX = "country";
+series2.name = "Year 2018";
+series2.clustered = false;
+series2.columns.template.tooltipText = "Dos & DDos attacks  {category} (2018): [bold]{valueY}[/]";
+
+}); // end am4core.ready()
+</script>
+
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_dark);
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart
+var chart = am4core.create("chartdiv1", am4charts.PieChart);
+chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+
+chart.data = [
+  {
+    country: "USA",
+    value: 260
+  },
+  {
+    country: "Russia",
+    value: 230
+  },
+  {
+    country: "UK",
+    value: 200
+  },
+  {
+    country: "Brazil",
+    value: 165
+  },
+  {
+    country: "China",
+    value: 139
+  },
+  {
+    country: "Canada",
+    value: 128
+  }
+];
+
+var series = chart.series.push(new am4charts.PieSeries());
+series.dataFields.value = "value";
+series.dataFields.radiusValue = "value";
+series.dataFields.category = "country";
+series.slices.template.cornerRadius = 6;
+series.colors.step = 3;
+
+series.hiddenState.properties.endAngle = -90;
+
+chart.legend = new am4charts.Legend();
+
+}); // end am4core.ready()
+</script>
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create map instance
+var chart = am4core.create("chartdiv2", am4maps.MapChart);
+
+// Set map definition
+chart.geodata = am4geodata_continentsLow;
+
+// Set projection
+chart.projection = new am4maps.projections.Miller();
+
+// Create map polygon series
+var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+polygonSeries.exclude = ["antarctica"];
+polygonSeries.useGeodata = true;
+
+// Create an image series that will hold pie charts
+var pieSeries = chart.series.push(new am4maps.MapImageSeries());
+var pieTemplate = pieSeries.mapImages.template;
+pieTemplate.propertyFields.latitude = "latitude";
+pieTemplate.propertyFields.longitude = "longitude";
+
+var pieChartTemplate = pieTemplate.createChild(am4charts.PieChart);
+pieChartTemplate.adapter.add("data", function(data, target) {
+  if (target.dataItem) {
+    return target.dataItem.dataContext.pieData;
+  }
+  else {
+    return [];
+  }
+});
+pieChartTemplate.propertyFields.width = "width";
+pieChartTemplate.propertyFields.height = "height";
+pieChartTemplate.horizontalCenter = "middle";
+pieChartTemplate.verticalCenter = "middle";
+
+var pieTitle = pieChartTemplate.titles.create();
+pieTitle.text = "{title}";
+
+var pieSeriesTemplate = pieChartTemplate.series.push(new am4charts.PieSeries);
+pieSeriesTemplate.dataFields.category = "category";
+pieSeriesTemplate.dataFields.value = "value";
+pieSeriesTemplate.labels.template.disabled = true;
+pieSeriesTemplate.ticks.template.disabled = true;
+
+pieSeries.data = [{
+  "title": "USA",
+  "latitude": 39.563353,
+  "longitude": -99.316406,
+  "width": 100,
+  "height": 100,
+  "pieData": [{
+    "category": "TCP attacks",
+    "value": 1200
+  }, {
+    "category": "HTTP attacks",
+    "value": 500
+  }, {
+    "category": "DNS attacks",
+    "value": 765 
+  }]
+}, {
+  "title": "Europe",
+  "latitude": 50.896104,
+  "longitude": 19.160156,
+  "width": 50,
+  "height": 50,
+  "pieData": [{
+    "category": "TCP attacks",
+    "value": 200
+  }, {
+    "category": "HTTP attacks",
+    "value": 600
+  }, {
+    "category": "DNS attacks",
+    "value": 350
+  }]
+}, {
+  "title": "Asia",
+  "latitude": 47.212106,
+  "longitude": 103.183594,
+  "width": 80,
+  "height": 80,
+  "pieData": [{
+    "category": "TCP attacks",
+    "value": 352
+  }, {
+    "category": "HTTP attacks",
+    "value": 266
+  }, {
+    "category": "DNS attacks",
+    "value": 512
+  }, {
+    "category": "UDP attacks",
+    "value": 199
+  }]
+}, {
+  "title": "Africa",
+  "latitude": 11.081385,
+  "longitude": 21.621094,
+  "width": 50,
+  "height": 50,
+  "pieData": [{
+    "category": "TCP attacks",
+    "value": 200
+  }, {
+    "category": "HTTP attacks",
+    "value": 300
+  }, {
+    "category": "DNS attacks",
+    "value": 599
+  }, {
+    "category": "UDP attacks",
+    "value": 512
+  }]
+}];
+
+}); // end am4core.ready()
+</script>
+
+</body>
+
+</html> 
